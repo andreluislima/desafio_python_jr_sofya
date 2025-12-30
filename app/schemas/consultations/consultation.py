@@ -1,0 +1,16 @@
+from pydantic import BaseModel, Field
+
+from .patient import PatientIn, PatientOut
+from .appointment import AppointmentIn, AppointmentOut
+from .medication import MedicationIn
+
+class ConsultationIn(BaseModel):
+    patient: PatientIn
+    appointment: AppointmentIn
+    medications: List[MedicationIn] = Field(default_factory=list)
+
+class ConsultationOut(BaseModel):
+    patient: PatientOut
+    appointment: AppointmentOut
+    medications: List[str]
+    text_sumary: str
