@@ -24,7 +24,6 @@ class PatientIn(BaseModel):
             raise ValueError("Data de nascimento inválida.\nA data de nascimento não pode ser maior ou igual a data de hoje")
         return value
 
-
 class PatientOut(BaseModel):
     name:str
     age:int

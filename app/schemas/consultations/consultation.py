@@ -1,8 +1,11 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Fiel
+
+from typing import List
 
 from .patient import PatientIn, PatientOut
 from .appointment import AppointmentIn, AppointmentOut
 from .medication import MedicationIn
+
 
 class ConsultationIn(BaseModel):
     patient: PatientIn
