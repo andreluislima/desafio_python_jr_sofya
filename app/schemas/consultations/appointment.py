@@ -4,7 +4,7 @@ from typing import Optional
 from pydantic import BaseModel, Field, field_validator  
 
 class AppointmentIn(BaseModel):
-    date: date = Field(...)
+    date: date  
     complaint:str = Field(..., min_length=3)
     notes: Optional[str] = None
 

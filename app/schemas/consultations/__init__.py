@@ -7,7 +7,7 @@ __all__ = [
     "ConsultationIn",
     "ConsultationOut",
     "PatientIn",
-    "PatientOut"
+    "PatientOut",
     "AppointmentIn",
     "AppointmentOut",
     "MedicationIn"
