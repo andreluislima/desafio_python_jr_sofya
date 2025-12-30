@@ -9,7 +9,7 @@ class PatientIn(BaseModel):
 
     @field_validator("name")
     @classmethod
-    def validate_name(cls, value:str) -> str:
+    def validar_nome(cls, value:str) -> str:
 
         value = value.strip()
         if not value:
@@ -18,7 +18,7 @@ class PatientIn(BaseModel):
     
     @field_validator("birth_date")
     @classmethod
-    def validate_birth_date(cls, value:date) -> date:
+    def validar_data_nascimento(cls, value:date) -> date:
 
         if value >= date.today():
             raise ValueError("Data de nascimento inválida.\nA data de nascimento não pode ser maior ou igual a data de hoje")

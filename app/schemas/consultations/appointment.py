@@ -8,9 +8,9 @@ class AppointmentIn(BaseModel):
     complaint:str = Field(..., min_length=3)
     notes: Optional[str] = None
 
-    @field_validator
+    @field_validator("date")
     @classmethod
-    def validate_appointment_date(cls, value:date) -> date:
+    def validar_data_consulta(cls, value:date) -> date:
         if value > date.today():
             raise ValueError("Data inválida.\nData de consulta não pode ser maior que a data de hoje.")
         return value
