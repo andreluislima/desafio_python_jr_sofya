@@ -10,7 +10,7 @@ from app.schemas.consultations import (
     MedicationIn
 )
 
-def test_validacao_entrada_consulta():
+def test_validar_entrada_consulta():
     entrada_consulta = {
         "patient": {
             "name": "André Lima",
@@ -33,3 +33,26 @@ def test_validacao_entrada_consulta():
     assert model.patient.name == "André Lima"
     assert model.appointment.complaint == "Febre alta"
     assert len(model.medications) == 2
+
+def test_validar_data_nascimento():
+    amanha = date.today() + timedelta(days=1)
+
+    entrada_consulta = {
+        "name": "Carlos Lins",
+        "birth_date":str(amanha),
+        "gender":"M"
+    }
+
+    with pytest.raises(ValidationError) as ex:
+        PatientIn.model_validate(entrada_consulta)
+
+def test_validar_data_consulta():
+
+    amanha = date.today() + timedelta(days=1)
+
+    entrada_consulta = {
+        "date":str(amanha),
+        "complaint":"Febre",
+        "notes":"Paciente se queixa de febres frequentes"
+    }
+    ...
