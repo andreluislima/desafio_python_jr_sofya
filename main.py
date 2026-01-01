@@ -3,8 +3,12 @@ from app.api.api import api_router
 
 app = FastAPI(
     title = "API de consultas médicas",
-    description = "API para cadastro e validação de consultas médicas",
-    version= "1.0.0"
+    description = "API para cadastro e validação de consultas médicas.",
+    version= "1.0.0",
+    contact={
+        "name": "Sofya",
+        "url":"https://www.sofya.ai/",
+    }
 )
 
 app.include_router(api_router)
