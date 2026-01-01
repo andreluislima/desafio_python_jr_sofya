@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from app.api.api import api_router
 
+#Endpoint -> /consultations/
+
 app = FastAPI(
     title = "API de consultas médicas",
     description = "API para cadastro e validação de consultas médicas.",
@@ -12,9 +14,6 @@ app = FastAPI(
 )
 
 app.include_router(api_router)
-
-#Endpoint -> /consultations/
-
 
 if __name__ == '__main__':
     import uvicorn

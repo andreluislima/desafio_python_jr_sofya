@@ -55,4 +55,4 @@ def test_validar_data_consulta():
         "complaint":"Febre",
         "notes":"Paciente se queixa de febres frequentes"
     }
-    ...
+    

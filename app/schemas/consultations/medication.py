@@ -5,8 +5,3 @@ class MedicationIn(BaseModel):
     dosage:str = Field(...)
     frequency:str = Field(...)
 
-
-class MedicationOut(BaseModel):
-    name:str
-    dosage:str
-    frequency:str
