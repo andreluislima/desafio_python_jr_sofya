@@ -22,7 +22,7 @@ def calcular_idade(data_nascimento: date, data_atual:date) -> int:
     return idade -1
 
 def padronizar_genero(linha: str) -> str:
-    valor = (linha or "").strip().split().lower()
+    valor = (linha or "").strip().lower()
 
     genero_feminino = {"f", "famale", "woman", "feminino", "mulher"}
     genero_masculino = {"m", "male", "man", "masculino", "masc", "homem"}
@@ -40,7 +40,7 @@ def processar_consulta(entrada_consulta: ConsultationIn) -> ConsultationOut:
                 entrada_consulta.appointment.date
             )
 
-    genero_format = definir_genero(entrada_consulta.patient.gender)
+    genero_format = padronizar_genero(entrada_consulta.patient.gender)
     
     medicamentos: List[str] = []
     for m in entrada_consulta.medications:
