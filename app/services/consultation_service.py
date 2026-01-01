@@ -73,5 +73,5 @@ def processar_consulta(entrada_consulta: ConsultationIn) -> ConsultationOut:
             "notes":entrada_consulta.appointment.notes
          },
          medications = medicamentos,
-         text_sumary = resumo_prontuario
+         text_summary = resumo_prontuario
     )

@@ -16,4 +16,4 @@ class ConsultationOut(BaseModel):
     patient: PatientOut
     appointment: AppointmentOut
     medications: List[str]
-    text_sumary: str
+    text_summary: str

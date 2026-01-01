@@ -21,7 +21,7 @@ class PatientIn(BaseModel):
     def validar_data_nascimento(cls, value:date) -> date:
 
         if value >= date.today():
-            raise ValueError("Data de nascimento inválida.A data de nascimento não pode ser maior ou igual a data de hoje")
+            raise ValueError("Data de nascimento inválida. Não pode ser hoje ou no futuro.")
         return value
 
 class PatientOut(BaseModel):
