@@ -41,9 +41,7 @@ def processar_consulta(entrada_consulta: ConsultationIn) -> ConsultationOut:
     
     medicamentos: List[str] = []
     for m in entrada_consulta.medications:
-        medicamentos.append(m.name)
-        medicamentos.append(m.dosage)
-        medicamentos.append(m.frequency)
+        medicamentos.append(f"{m.name} {m.dosage} ({m.frequency})")
 
     if genero_format == "female":
         genero = "feminino"
@@ -61,7 +59,7 @@ def processar_consulta(entrada_consulta: ConsultationIn) -> ConsultationOut:
          patient_summary = {
             "name": entrada_consulta.patient.name,
             "age":idade,
-            "gender":genero
+            "gender":genero_format
          },
          appointment_summary = {
             "date":entrada_consulta.appointment.date,
