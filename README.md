@@ -1,10 +1,10 @@
-# 🩺 Desafio Técnico — API de Consulta (FastAPI)
+# 🩺 Desafio Técnico — API de Consulta 
 
 
 ## Stack Utilizada
 
 - **Python 3.12**
-- **pip**
+- **FastAPI**
 
 ---
 
@@ -74,12 +74,15 @@
 ```
 
 ## 📝Decisões Técnicas e Observações
-- Uso do prefix nas rotas
-Em vez de definir o caminho diretamente no endpoint, eu utilizei o prefix para sugerir uma organização por domínio e facilitar uma futura escalabilidade da API.
+- **Uso do prefix nas rotas**
+  <p>Em vez de definir o caminho diretamente no endpoint, eu utilizei o prefix para sugerir uma organização por domínio e facilitar uma futura escalabilidade da API.</p>
 
-- Schemas - Patient
-Adicionei uma validação para a data de nascimento, impedindo que sejam informadas datas no futuro ou iguais à data atual.
+- **Validacões**
+  <p>A validação dos dados foi realizada principalmente com Pydantic, mas achei interessante complementar com algumas validações manuais.</p>
+  
+- **Schemas - Patient**
+  <p> Adicionei uma validação para a data de nascimento, impedindo que sejam informadas datas no futuro ou iguais à data atual.</p>
 
-- Schemas - Appointment
-Adicionei uma validação ao complaint para evitar que ela venha vazia.
+- **Schemas - Appointment**
+   <p> Adicionei uma validação ao complaint para evitar que ela venha vazia.</p>
 
