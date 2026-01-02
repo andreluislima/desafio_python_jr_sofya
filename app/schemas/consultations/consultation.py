@@ -13,7 +13,7 @@ class ConsultationIn(BaseModel):
     medications: List[MedicationIn] = Field(default_factory=list)
 
 class ConsultationOut(BaseModel):
-    patient: PatientOut
-    appointment: AppointmentOut
+    patient_summary: PatientOut
+    appointment_summary: AppointmentOut
     medications: List[str]
     text_summary: str

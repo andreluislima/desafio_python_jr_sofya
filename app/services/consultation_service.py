@@ -58,12 +58,12 @@ def processar_consulta(entrada_consulta: ConsultationIn) -> ConsultationOut:
     )
     
     return ConsultationOut(
-         patient = {
+         patient_summary = {
             "name": entrada_consulta.patient.name,
             "age":idade,
             "gender":genero
          },
-         appointment = {
+         appointment_summary = {
             "date":entrada_consulta.appointment.date,
             "complaint":entrada_consulta.appointment.complaint,
             "notes":entrada_consulta.appointment.notes
