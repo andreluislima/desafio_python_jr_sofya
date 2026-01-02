@@ -56,3 +56,5 @@ def test_validar_data_consulta():
         "notes":"Paciente se queixa de febres frequentes"
     }
     
+    with pytest.raises(ValidationError) as ex:
+        PatientIn.model_validate(entrada_consulta)
